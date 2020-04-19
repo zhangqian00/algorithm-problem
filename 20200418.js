@@ -22,16 +22,13 @@
 * */
 var removeDuplicates = function(nums) {
     let len = nums.length;
-    for(let i=0;i<len;i++){
-        for(let j=i+1;j<len-i;j++){
-            if(nums[i]===nums[j]){
-                nums.splice(i,1);
-                j--;
-            }
+    let counts = 0;
+    for(let i=1;i<len;i++){
+        if(nums[i] !== nums[i-1]){
+            nums[i-counts] = nums[i];            
+        }else {
+            counts ++;
         }
     }
-    if(nums[len-1]===nums[len-2]){
-        nums.splice(len-1,1);
-    }
-    return nums.length;
+    return len - counts;
 };
