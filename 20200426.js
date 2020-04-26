@@ -21,5 +21,23 @@
  * @return {number[]}
  */
 var plusOne = function(digits) {
-	
+	let len = digits.length;
+	let jin = 1;
+	for(let i=len-1;i>=0;i--){
+		if(digits[i] < 9){
+			digits[i] += jin; 
+			jin = 0;
+		}else {
+			if(jin===0){
+				digits[i] += jin;
+			}else {
+				digits[i] = 0;
+				jin = 1;
+				if(i===0){
+					digits.unshift(1);
+				}
+			}
+		}
+	}
+	return digits;
 };
