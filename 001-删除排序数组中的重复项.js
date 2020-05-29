@@ -32,3 +32,14 @@ var removeDuplicates = function(nums) {
     }
     return len - counts;
 };
+var removeDuplicates = function(nums) {
+    let len = nums.length;
+    for(let i=0;i<=len;i++){
+        if(nums.indexOf(nums[i])!==nums.lastIndexOf(nums[i])){
+            nums.splice(i,1);
+            i--;
+            len--;
+        }
+    }
+    return len;
+};
