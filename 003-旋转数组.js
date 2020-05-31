@@ -30,10 +30,6 @@
  */
 var rotate = function(nums, k) {
     let len = nums.length;
-    let temp = nums.splice(len-k);
-    let tempLen = temp.length;
-    for(let i=tempLen-1;i>=0;i--){
-        nums.unshift(temp[i]);
-    }
-    return nums;
+	nums.unshift(...nums.splice(len-k,k));
+	return nums;
 };
