@@ -31,3 +31,6 @@ var containsDuplicate = function(nums) {
     }
     return flag;
 };
+var containsDuplicate = function(nums) {
+    return Array.from(new Set(nums)).length!==nums.length;
+};
