@@ -17,12 +17,11 @@ s = "loveleetcode",
  * @return {number}
  */
 var firstUniqChar = function(s) {
-	let arr = s.split('');
-	let len = arr.length;
+	let len = s.length;
 	for(let i=0;i<len;i++){
-		if(arr.indexOf(arr[i]) === arr.lastIndexOf(arr[i])){
-			return i;
+		if(s.indexOf(s[i])===s.lastIndexOf(s[i])){
+			return i
 		}
 	}
-	return -1;
+	return -1
 };
