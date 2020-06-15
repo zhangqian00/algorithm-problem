@@ -24,12 +24,14 @@
  */
 var strStr = function(haystack, needle) {
 	if(!haystack&&!needle||!needle) return 0;
-	let arr1 = haystack.split('');
-	for(let i=0;i<arr1.length;i++){
-			if(arr1[i] === needle[0]){
-				let temp = arr1.slice(i,i+needle.length);
-				if(temp.join('') === needle) return i;
+	for(let i=0;i<haystack.length;i++){
+			if(haystack[i] === needle[0]){
+				let temp = haystack.substring(i,i+needle.length);
+				if(temp === needle) return i;
 			}
 	}
 	return -1;
+};
+var strStr = function(haystack, needle) {
+	return haystack.indexOf(needle)
 };
