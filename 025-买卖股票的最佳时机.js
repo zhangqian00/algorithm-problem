@@ -35,3 +35,15 @@ var maxProfit = function(prices) {
     }
     return num;
 };
+var maxProfit = function(prices) {
+    let num = 0
+    for(let i=0;i<prices.length;i++){
+        let temp = prices.slice(i)
+        for(let j=0;j<temp.length;j++){
+            if(temp[j]>prices[i]){
+                num = temp[j] - prices[i]>num?temp[j] - prices[i]:num
+            }
+        }
+    }
+    return num
+};
