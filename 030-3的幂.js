@@ -30,3 +30,10 @@ var isPowerOfThree = function(n) {
 	}
 	return n===1;
 };
+var isPowerOfThree = function(n) {
+	if(n===0)return false
+    for(let i=n;i>=3;i/=3){
+        n/=3
+    }
+    return n===1
+};
