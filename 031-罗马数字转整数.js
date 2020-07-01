@@ -46,42 +46,33 @@ C 可以放在 D (500) 和 M (1000) 的左边，来表示 400 和 900。
  * @return {number}
  */
 var romanToInt = function(s) {
-	let obj1 = {
-        "I":1,
-        "V":5,
-        "X":10,
-        "L":50,
-        "C":100,
-        "D":500,
-        "M":1000
-    };
-    let obj2 = {
-        "IV":4,
-        "IX":9,
-        "XL":40,
-        "XC":90,
-        "CD":400,
-        "CM":900
-    };
-    let arr = s.split('');
-    let num = 0;
-    for(let key in obj2){
+	let num = 0
+    let arr = s.split('')
+    let temp1 = {
+        'I': 1,
+        'V': 5,
+        'X': 10,
+        'L': 50,
+        'C': 100,
+        'D': 500,
+        'M': 1000
+    }
+    let temp2 = {
+        'IV': 4,
+        'IX': 9,
+        'XL': 40,
+        'XC': 90,
+        'CD': 400,
+        'CM': 900
+    }
+    for(let key in temp2){
         if(s.indexOf(key)!==-1){
-            num+=obj2[key];
-            arr.splice(s.indexOf(key),2);
-            s = arr.join('');
+            arr.splice(s.indexOf(key),2)
+            num+=temp2[key]
         }
     }
-    let arr2 = s.split('');
-    for(let i=0;i<arr2.length;i++){
-        for(let key2 in obj1){
-            if(s.indexOf(key2)!==-1){
-                num+=obj1[key2];
-                arr2.splice(s.indexOf(key2),1);
-                i--;
-                s = arr2.join('');
-            }
-        }
+    for(let i=0;i<arr.length;i++){
+        num+=temp1[arr[i]]
     }
-    return num;
+    return num
 };
