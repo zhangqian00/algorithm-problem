@@ -41,3 +41,12 @@ var hammingWeight = function(n) {
 	}
 	return num;
 };
+var hammingWeight = function(n) {
+    let temp = n.toString(2)
+    let arr = temp.split('')
+    let num = 0
+    arr.forEach((el)=>{
+        if(el==1)num++
+    })
+    return num
+};
