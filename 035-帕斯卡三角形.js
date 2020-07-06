@@ -22,17 +22,16 @@
  * @return {number[][]}
  */
 var generate = function(numRows) {
-	let res = [[1],[1,1]];
-    if(numRows===0) return [];
-    if(numRows===1) return [[1]];
+	if(numRows===0)return []
+    if(numRows===1)return [[1]]
+    let res = [[1],[1,1]]
     for(let i=2;i<numRows;i++){
-        let temp = []
-        let arr1 = res[i-1]
-        for(let j=0;j<i;j++){
-            temp[j]=arr1[j]+(arr1[j-1]?arr1[j-1]:0)
+        let temp = res[i-1]
+        let temp2 = []
+        for(let j=0;j<=temp.length;j++){
+            temp2.push((temp[j]||0)+(temp[j-1]||0))
         }
-        temp[i]=arr1[arr1.length-1]
-        res.push(temp)
+        res.push(temp2)
     }
-    return res;
+    return res
 };
