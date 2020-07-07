@@ -34,15 +34,15 @@
  */
 var isValid = function(s) {
 	while (s.length>1) {
-        if(s.indexOf('{}')!=-1){
+        if(s.indexOf('{}')!==-1){
             s = s.replace(/{}/g,'');
-        }else if(s.indexOf('[]')!=-1){
+        }else if(s.indexOf('[]')!==-1){
             s = s.replace(/\[\]/g,'');
-        }else if(s.indexOf('()')!=-1){
+        }else if(s.indexOf('()')!==-1){
             s = s.replace(/\(\)/g,'');
         }else {
             return false;
         }
     }
-    return s=='';
+    return s==='';
 };
