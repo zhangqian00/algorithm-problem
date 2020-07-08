@@ -25,3 +25,13 @@ var missingNumber = function(nums) {
 		}
 	}
 };
+var missingNumber = function(nums) {
+	nums.sort((a,b)=>a-b)
+	let max = Math.max.apply(null,nums)
+	for(let i=0;i<max;i++){
+		if(nums.indexOf(i)===-1){
+			return i
+		}
+	}
+	return nums.length
+};
